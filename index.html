@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8fc" />
+    <meta name="description" content="Lạc Việt Data — hệ thống dữ liệu và AI cho doanh nghiệp Việt: viết SQL chạy ngay trên trình duyệt, hỏi dữ liệu bằng tiếng Việt, dựng tác tử AI, giám sát truy vấn và chi phí. Bản demo, dữ liệu mô phỏng." />
+    <meta property="og:title" content="Lạc Việt Data — Hệ thống dữ liệu & AI cho doanh nghiệp Việt" />
+    <meta property="og:description" content="Hỏi dữ liệu bằng tiếng Việt, AI viết SQL và vẽ biểu đồ cho bạn. Bản demo của Ntahien Tech." />
+    <title>Lạc Việt Data — Hệ thống dữ liệu & AI cho doanh nghiệp Việt</title>
+    <script>
+      try {
+        var t = (JSON.parse(localStorage.getItem('lacviet-ui') || '{}').state || {}).theme || 'light';
+        var d = t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+        if (d) document.documentElement.classList.add('dark');
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

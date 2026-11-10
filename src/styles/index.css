@@ -1,0 +1,281 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ==========================================================
+   Lạc Việt Data — design token
+   Màu chủ đạo: tím chàm (indigo) + điểm nhấn lam ngọc (ice)
+   gợi sắc đồng thau và nước. Mọi màu đi qua biến CSS để đổi
+   sáng / tối ở một chỗ.
+   ========================================================== */
+:root {
+  --c-canvas: #f7f8fc;
+  --c-side: #f1f2f9;
+  --c-surface: #ffffff;
+  --c-subtle: #f2f3f9;
+  --c-hover: #e9ebf5;
+  --c-press: #dfe2f0;
+  --c-line: #e4e6f0;
+  --c-line-strong: #cfd3e4;
+
+  --c-fg: #14152b;
+  --c-dim: #383a56;
+  --c-muted: #666985;
+  --c-faint: #9a9db5;
+
+  --c-brand-50: #f0eeff;
+  --c-brand-100: #e2defe;
+  --c-brand-200: #c7befd;
+  --c-brand-300: #a596fb;
+  --c-brand-400: #8470f5;
+  --c-brand-500: #5b46e5;
+  --c-brand-600: #4a35cf;
+  --c-brand-700: #3b28aa;
+  --c-brand-ink: #4a35cf;
+
+  --c-ice: #0fb5c9;
+  --c-ice-soft: #e2f8fb;
+  --c-gold: #d99a2b;
+  --c-gold-soft: #fbf1dc;
+
+  --c-pos: #0e9a6a;
+  --c-pos-soft: #e1f5ec;
+  --c-neg: #d6364f;
+  --c-neg-soft: #fde8eb;
+  --c-warn: #b8730c;
+  --c-warn-soft: #fcf0d9;
+  --c-info: #2f6bd8;
+  --c-info-soft: #e5eefc;
+
+  --c-chart-1: #5b46e5;
+  --c-chart-2: #0fb5c9;
+  --c-chart-3: #f29d38;
+  --c-chart-4: #e0559b;
+  --c-chart-5: #2fb57c;
+  --c-chart-6: #8a94b8;
+
+  --c-code-bg: #ffffff;
+  --c-code-kw: #4a35cf;
+  --c-code-str: #b0457a;
+  --c-code-num: #0b8f8f;
+  --c-code-cmt: #8d90a8;
+  --c-code-fn: #c46a12;
+
+  --shadow-xs: 0 1px 2px rgba(20, 21, 43, .05);
+  --shadow-sm: 0 1px 2px rgba(20, 21, 43, .04), 0 2px 8px -2px rgba(20, 21, 43, .07);
+  --shadow-md: 0 2px 4px rgba(20, 21, 43, .04), 0 12px 32px -12px rgba(20, 21, 43, .18);
+  --shadow-lg: 0 4px 10px rgba(20, 21, 43, .05), 0 32px 64px -24px rgba(20, 21, 43, .3);
+
+  color-scheme: light;
+}
+
+.dark {
+  --c-canvas: #0d0e1a;
+  --c-side: #111223;
+  --c-surface: #15172a;
+  --c-subtle: #1b1d33;
+  --c-hover: #22253f;
+  --c-press: #2a2d4a;
+  --c-line: #252842;
+  --c-line-strong: #343858;
+
+  --c-fg: #eceefa;
+  --c-dim: #c5c8e0;
+  --c-muted: #8e92b2;
+  --c-faint: #5f6385;
+
+  --c-brand-50: #1a1840;
+  --c-brand-100: #221f55;
+  --c-brand-200: #2f2a78;
+  --c-brand-300: #4b3fb0;
+  --c-brand-400: #6c5be6;
+  --c-brand-500: #8070ff;
+  --c-brand-600: #9a8dff;
+  --c-brand-700: #bdb4ff;
+  --c-brand-ink: #a99dff;
+
+  --c-ice: #3fd3e4;
+  --c-ice-soft: #12293a;
+  --c-gold: #e8b04e;
+  --c-gold-soft: #2a2213;
+
+  --c-pos: #3cc48d;
+  --c-pos-soft: #12281f;
+  --c-neg: #ff6b80;
+  --c-neg-soft: #2c161b;
+  --c-warn: #f0aa3c;
+  --c-warn-soft: #2b2112;
+  --c-info: #6f9cff;
+  --c-info-soft: #151f33;
+
+  --c-chart-1: #8070ff;
+  --c-chart-2: #3fd3e4;
+  --c-chart-3: #f5b25c;
+  --c-chart-4: #ef7ab5;
+  --c-chart-5: #4fd19a;
+  --c-chart-6: #9aa3c8;
+
+  --c-code-bg: #121426;
+  --c-code-kw: #a99dff;
+  --c-code-str: #f29ac4;
+  --c-code-num: #5fe0e0;
+  --c-code-cmt: #646a8f;
+  --c-code-fn: #f5b25c;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, .4);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4), 0 2px 8px -2px rgba(0, 0, 0, .5);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, .35), 0 12px 32px -12px rgba(0, 0, 0, .7);
+  --shadow-lg: 0 4px 10px rgba(0, 0, 0, .4), 0 32px 64px -24px rgba(0, 0, 0, .85);
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  --color-canvas: var(--c-canvas);
+  --color-side: var(--c-side);
+  --color-surface: var(--c-surface);
+  --color-subtle: var(--c-subtle);
+  --color-hover: var(--c-hover);
+  --color-press: var(--c-press);
+  --color-line: var(--c-line);
+  --color-line-strong: var(--c-line-strong);
+
+  --color-fg: var(--c-fg);
+  --color-dim: var(--c-dim);
+  --color-muted: var(--c-muted);
+  --color-faint: var(--c-faint);
+
+  --color-brand-50: var(--c-brand-50);
+  --color-brand-100: var(--c-brand-100);
+  --color-brand-200: var(--c-brand-200);
+  --color-brand-300: var(--c-brand-300);
+  --color-brand-400: var(--c-brand-400);
+  --color-brand-500: var(--c-brand-500);
+  --color-brand-600: var(--c-brand-600);
+  --color-brand-700: var(--c-brand-700);
+  --color-brand-ink: var(--c-brand-ink);
+  --color-brand: var(--c-brand-500);
+
+  --color-ice: var(--c-ice);
+  --color-ice-soft: var(--c-ice-soft);
+  --color-gold: var(--c-gold);
+  --color-gold-soft: var(--c-gold-soft);
+  --color-pos: var(--c-pos);
+  --color-pos-soft: var(--c-pos-soft);
+  --color-neg: var(--c-neg);
+  --color-neg-soft: var(--c-neg-soft);
+  --color-warn: var(--c-warn);
+  --color-warn-soft: var(--c-warn-soft);
+  --color-info: var(--c-info);
+  --color-info-soft: var(--c-info-soft);
+
+  --color-chart-1: var(--c-chart-1);
+  --color-chart-2: var(--c-chart-2);
+  --color-chart-3: var(--c-chart-3);
+  --color-chart-4: var(--c-chart-4);
+  --color-chart-5: var(--c-chart-5);
+  --color-chart-6: var(--c-chart-6);
+
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+
+  --radius-card: 14px;
+  --radius-ctl: 10px;
+
+  --ease-out-soft: cubic-bezier(.22, 1, .36, 1);
+
+  --animate-fade-in: fade-in .18s ease-out;
+  --animate-pop-in: pop-in .22s var(--ease-out-soft);
+  --animate-slide-in: slide-in .28s var(--ease-out-soft);
+  --animate-slide-up: slide-up .28s var(--ease-out-soft);
+  --animate-shimmer: shimmer 1.4s linear infinite;
+  --animate-blink: blink 1s steps(2) infinite;
+  --animate-float: float-y 6s ease-in-out infinite;
+}
+
+@keyframes fade-in { from { opacity: 0 } to { opacity: 1 } }
+@keyframes pop-in { from { opacity: 0; transform: translateY(6px) scale(.98) } to { opacity: 1; transform: none } }
+@keyframes slide-in { from { opacity: .4; transform: translateX(24px) } to { opacity: 1; transform: none } }
+@keyframes slide-up { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: none } }
+@keyframes shimmer { from { background-position: -400px 0 } to { background-position: 400px 0 } }
+@keyframes blink { to { visibility: hidden } }
+@keyframes float-y { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+
+/* ---------- Nền tảng ---------- */
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    @apply bg-canvas text-fg font-sans antialiased;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  ::selection { background: var(--c-brand-200); color: var(--c-fg); }
+  :focus-visible { outline: 2px solid var(--c-brand-400); outline-offset: 2px; border-radius: 6px; }
+  button, [role='button'] { cursor: pointer; }
+  button:disabled { cursor: not-allowed; }
+  input, textarea, select { font: inherit; color: inherit; }
+  input::placeholder, textarea::placeholder { color: var(--c-faint); }
+  h1, h2, h3, h4 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--c-line-strong); border-radius: 99px; border: 3px solid transparent; background-clip: content-box; }
+  ::-webkit-scrollbar-track { background: transparent; }
+}
+
+/* ---------- Tiện ích typography ---------- */
+@utility num { font-variant-numeric: tabular-nums; }
+@utility ds-display { font-size: clamp(2.6rem, 6.4vw, 5.6rem); line-height: 1; font-weight: 800; letter-spacing: -.045em; }
+@utility ds-h1 { font-size: 26px; line-height: 1.25; font-weight: 650; letter-spacing: -.02em; }
+@utility ds-h2 { font-size: 18px; line-height: 1.35; font-weight: 600; letter-spacing: -.012em; }
+@utility ds-h3 { font-size: 15px; line-height: 1.4; font-weight: 600; letter-spacing: -.006em; }
+@utility ds-label { font-size: 11px; line-height: 1.4; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--c-muted); }
+@utility ds-caption { font-size: 12.5px; line-height: 1.45; color: var(--c-muted); }
+@utility ds-amount { font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -.025em; font-variant-numeric: tabular-nums; }
+
+/* ---------- Thành phần lặp lại ---------- */
+@utility card { min-width: 0; background: var(--c-surface); border: 1px solid var(--c-line); border-radius: 14px; box-shadow: var(--shadow-xs); }
+@utility hairline { border-color: var(--c-line); }
+@utility skeleton {
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--c-subtle) 0%, var(--c-hover) 50%, var(--c-subtle) 100%);
+  background-size: 800px 100%;
+  animation: var(--animate-shimmer);
+}
+@utility no-scrollbar { scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
+@utility dotted-underline { text-decoration: underline dotted var(--c-faint); text-underline-offset: 4px; }
+@utility dot-grid {
+  background-image: radial-gradient(var(--c-line-strong) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+@utility text-crystal {
+  background: linear-gradient(100deg, var(--c-brand-500) 10%, var(--c-ice) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility bg-crystal { background: linear-gradient(120deg, var(--c-brand-500), var(--c-ice)); }
+
+/* ---------- CodeMirror (trình soạn SQL) ---------- */
+.cm-editor { height: 100%; font-size: 13.5px; background: var(--c-code-bg); color: var(--c-fg); }
+.cm-editor.cm-focused { outline: none; }
+.cm-scroller { font-family: var(--font-mono); line-height: 1.7; }
+.cm-gutters { background: var(--c-code-bg) !important; border-right: 1px solid var(--c-line) !important; color: var(--c-faint) !important; }
+.cm-activeLine { background: color-mix(in srgb, var(--c-brand-500) 5%, transparent) !important; }
+.cm-activeLineGutter { background: transparent !important; color: var(--c-fg) !important; }
+.cm-cursor { border-left-color: var(--c-brand-500) !important; border-left-width: 2px !important; }
+.cm-selectionBackground, .cm-focused .cm-selectionBackground { background: color-mix(in srgb, var(--c-brand-500) 18%, transparent) !important; }
+.cm-tooltip { background: var(--c-surface) !important; border: 1px solid var(--c-line) !important; border-radius: 10px; box-shadow: var(--shadow-md); overflow: hidden; }
+.cm-tooltip-autocomplete ul li[aria-selected] { background: var(--c-brand-500) !important; color: #fff !important; }
+.cm-tooltip-autocomplete ul { font-family: var(--font-mono); font-size: 12.5px; }
+.cm-searchMatch { background: color-mix(in srgb, var(--c-gold) 35%, transparent); }
+.cm-matchingBracket { background: color-mix(in srgb, var(--c-ice) 25%, transparent) !important; outline: none; }
+.cm-panels { background: var(--c-subtle) !important; color: var(--c-fg) !important; border-color: var(--c-line) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
