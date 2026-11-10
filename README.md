@@ -10,6 +10,8 @@
 
 > ⚠️ Đây là **sản phẩm demo giao diện** do [Ntahien Tech](https://ntahientech.com) thiết kế và lập trình. Lạc Việt Data, chuỗi cà phê **Phố Núi** và các nhà cung cấp đám mây (Trường Sơn, Âu Cơ, Hồng Bàng) đều là **tên hư cấu**, không liên quan tới doanh nghiệp nào trùng tên. Toàn bộ dữ liệu là **dữ liệu mô phỏng**.
 
+🔗 **Demo:** https://hethonglacviet.vercel.app — bấm **"Vào bằng tài khoản demo"** ở trang đăng nhập (hoặc mở thẳng [/trang-chu?demo=1](https://hethonglacviet.vercel.app/trang-chu?demo=1)).
+
 ![Trang giới thiệu](docs/screenshots/01-gioi-thieu.jpg)
 
 ## Điểm khác biệt: SQL chạy thật, không cần máy chủ
